@@ -3,7 +3,7 @@ name: Daily Reddit Ideas Bot
 on:
   schedule:
     # Ejecuta todos los días a las 20:00 AM UTC (ajusta horario si quieres)
-    - cron: '0 20 * * *'
+    - cron: '0 8 * * *'
   workflow_dispatch: # Permite correrlo manualmente
 
 jobs:
