@@ -1,5 +1,6 @@
 import requests
 import datetime
+import feedparser
 
 # Configuración del bot
 TELEGRAM_TOKEN = "7601389177:AAE40TD_5FM4V7Q359B_egRjTbzyiAAft2o"
@@ -8,18 +9,20 @@ SUBREDDITS = ["AppIdeas", "SomebodyMakeThis"]
 HEADERS = {"User-Agent": "DailyRedditIdeasBot/0.1"}
 
 def fetch_top_posts(subreddit, limit=5):
-    url = f"https://www.reddit.com/r/{subreddit}/top/.json?t=day&limit={limit}"
-    response = requests.get(url, headers=HEADERS)
+    url = f"https://www.reddit.com/r/{subreddit}/top/.rss?t=day"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (compatible; MyRedditBot/1.0; +https://example.com/bot)'
+    }
+    response = requests.get(url, headers=headers)
     if response.status_code != 200:
         return [f"Error fetching from r/{subreddit} (status {response.status_code})"]
-    data = response.json()
-    posts = data.get("data", {}).get("children", [])
+    feed = feedparser.parse(response.content)
     ideas = []
-    for post in posts:
-        title = post["data"].get("title", "No title")
-        url = "https://reddit.com" + post["data"].get("permalink", "")
-        ideas.append(f"• {title}\n{url}")
-    return ideas
+    for entry in feed.entries[:limit]:
+        title = entry.title
+        link = entry.link
+        ideas.append(f"• {title}\n{link}")
+    return ideas if ideas else [f"No posts found in r/{subreddit}."]
 
 def build_daily_message():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
