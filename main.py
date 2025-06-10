@@ -38,6 +38,8 @@ def send_telegram_message(text):
         "parse_mode": "Markdown"
     }
     response = requests.post(url, json=payload)
+    print(f"Telegram API responded with status code: {response.status_code}")
+    print(f"Response content: {response.text}")
     return response.status_code == 200
 
 def main():
