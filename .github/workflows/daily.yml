@@ -1,0 +1,26 @@
+name: Daily Reddit Ideas Bot
+
+on:
+  schedule:
+    # Ejecuta todos los días a las 20:00 AM UTC (ajusta horario si quieres)
+    - cron: '0 20 * * *'
+  workflow_dispatch: # Permite correrlo manualmente
+
+jobs:
+  send_ideas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run bot script
+        run: python main.py
