@@ -43,7 +43,12 @@ def send_telegram_message(text):
     return response.status_code == 200
 
 def main():
+    print("⏱ Ejecutando bot diario...")
     message = build_daily_message()
+    print("📨 Mensaje generado:")
+    print(message)
     success = send_telegram_message(message)
     if success:
-        print("Mensaje enviado correctamente.")
+        print("✅ Mensaje enviado correctamente.")
+    else:
+        print("❌ Error enviando mensaje.")
