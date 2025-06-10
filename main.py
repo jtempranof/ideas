@@ -52,3 +52,7 @@ def main():
         print("✅ Mensaje enviado correctamente.")
     else:
         print("❌ Error enviando mensaje.")
+        
+if __name__ == "__main__":
+    print("🔁 Llamando a main()")
+    main()
