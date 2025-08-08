@@ -43,6 +43,15 @@
       "features.items.5.title": "Clean code",
       "features.items.5.desc": "Clear HTML/CSS/JS that is easy to maintain.",
 
+      "showcase.title": "Layouts ready to impress",
+      "showcase.subtitle": "Tilted, shimmering cards to present your app or product.",
+      "showcase.card1.title": "Modern UI",
+      "showcase.card1.desc": "Elegant and consistent components.",
+      "showcase.card2.title": "Smooth animations",
+      "showcase.card2.desc": "Purposeful transitions without distractions.",
+      "showcase.card3.title": "Fully responsive",
+      "showcase.card3.desc": "Adapts to any screen.",
+
       "pricing.title": "Simple plans",
       "pricing.subtitle": "Choose the plan that fits your launch.",
       "pricing.free.title": "Free",
@@ -113,6 +122,15 @@
       "features.items.4.desc": "Se adapta perfecto a móvil, tablet y escritorio.",
       "features.items.5.title": "Código limpio",
       "features.items.5.desc": "HTML/CSS/JS claros y fáciles de mantener.",
+
+      "showcase.title": "Diseños listos para impresionar",
+      "showcase.subtitle": "Tarjetas con efecto tilt y brillo para presentar tu app o producto.",
+      "showcase.card1.title": "UI Moderna",
+      "showcase.card1.desc": "Componentes elegantes y consistentes.",
+      "showcase.card2.title": "Animaciones suaves",
+      "showcase.card2.desc": "Transiciones con intención y sin distracciones.",
+      "showcase.card3.title": "Responsive total",
+      "showcase.card3.desc": "Se adapta a todas las pantallas.",
 
       "pricing.title": "Planes sencillos",
       "pricing.subtitle": "Elige el plan que se ajusta a tu lanzamiento.",
@@ -237,28 +255,33 @@
 
   // Simple tilt effect on hero card
   const tilt = document.querySelector(".hero-card");
-  if (tilt) {
+  function attachTilt(el) {
+    if (!el) return;
     const maxRotation = 8;
+    const baseTransform = getComputedStyle(el).transform === "none" ? "" : getComputedStyle(el).transform;
+    const set = (rx, ry) => {
+      el.style.transform = `${baseTransform ? baseTransform + " " : ""}rotateX(${rx}deg) rotateY(${ry}deg)`;
+    };
     const handleMove = (event) => {
-      const rect = tilt.getBoundingClientRect();
+      const rect = el.getBoundingClientRect();
       const px = (event.clientX - rect.left) / rect.width;
       const py = (event.clientY - rect.top) / rect.height;
       const rx = (py - 0.5) * -2 * maxRotation;
       const ry = (px - 0.5) * 2 * maxRotation;
-      tilt.style.transform = `translate(-50%, -40%) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      set(rx, ry);
     };
-    const reset = () => {
-      tilt.style.transform = "translate(-50%, -40%)";
-    };
-    tilt.addEventListener("mousemove", handleMove);
-    tilt.addEventListener("mouseleave", reset);
-    tilt.addEventListener("touchmove", (e) => {
+    const reset = () => { el.style.transform = baseTransform; };
+    el.addEventListener("mousemove", handleMove);
+    el.addEventListener("mouseleave", reset);
+    el.addEventListener("touchmove", (e) => {
       if (!e.touches || !e.touches[0]) return;
       const t = e.touches[0];
       handleMove({ clientX: t.clientX, clientY: t.clientY });
     }, { passive: true });
-    tilt.addEventListener("touchend", reset);
+    el.addEventListener("touchend", reset);
   }
+  if (tilt) attachTilt(tilt);
+  document.querySelectorAll(".showcase-card.tilt").forEach(attachTilt);
 
   initLanguage();
 })();
