@@ -1,0 +1,50 @@
+/*
+ * Custom styles for CodeFusion AI website
+ * Based on Creative template by StartBootstrap (MIT License)
+ */
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+#mainNav {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#mainNav .navbar-brand {
+  font-weight: 700;
+}
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background-image: url('https://images.unsplash.com/photo-1537432376769-00a5e63d5727?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+  background-size: cover;
+}
+
+header.masthead h1 {
+  font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+  header.masthead h1 {
+    font-size: 3.5rem;
+  }
+}
+
+section {
+  padding: 4rem 0;
+}
+
+footer {
+  padding: 2rem 0;
+  background-color: #212529;
+  color: #fff;
+}
+
+.navbar-shrink {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
