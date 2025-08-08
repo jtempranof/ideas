@@ -24,7 +24,8 @@ def try_forward(payload: dict) -> tuple[bool, str]:
                 f"Nuevo mensaje de contacto (lang: {payload.get('locale','-')})\n\n"
                 f"Nombre: {payload.get('name','-')}\n"
                 f"Email: {payload.get('email','-')}\n"
-                f"Empresa: {payload.get('company','-')}\n\n"
+                f"Empresa: {payload.get('company','-')}\n"
+                f"Servicio: {payload.get('service','-')}\n\n"
                 f"Mensaje:\n{payload.get('message','-')}\n"
             )
             msg = MIMEText(body, _charset="utf-8")
@@ -49,7 +50,8 @@ def try_forward(payload: dict) -> tuple[bool, str]:
             text = (
                 f"📩 Nuevo contacto (lang: {payload.get('locale','-')})\n"
                 f"👤 {payload.get('name','-')} — {payload.get('email','-')}\n"
-                f"🏢 {payload.get('company','-')}\n\n"
+                f"🏢 {payload.get('company','-')}\n"
+                f"🧩 Servicio: {payload.get('service','-')}\n\n"
                 f"✍️ {payload.get('message','-')}"
             )
             url = f"https://api.telegram.org/bot{tg_token}/sendMessage"
