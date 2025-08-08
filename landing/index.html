@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroBackend — Backend, IA/ML y Automatizaciones</title>
+  <meta name="description" content="Desarrollo backend a medida, IA y machine learning, y automatizaciones para empresas de transporte, turismo, deporte, finanzas y medicina." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2300E5FF'/><circle cx='50' cy='50' r='25' fill='%234B00FF'/></svg>">
+</head>
+<body>
+  <div class="bg-orb" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="logo-dot"></span>
+        <span class="brand-text">NeuroBackend</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#services" data-i18n="nav.services">Servicios</a>
+        <a href="#industries" data-i18n="nav.industries">Sectores</a>
+        <a href="#process" data-i18n="nav.process">Proceso</a>
+        <a href="#contact" class="btn btn-sm btn-primary" data-i18n="nav.contact">Contacto</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Change language">ES / EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">
+          <span data-i18n="hero.title.line1">Backend de élite</span>
+          <span class="gradient" data-i18n="hero.title.line2">IA y automatización</span>
+          <span data-i18n="hero.title.line3">sin humo.</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero.subtitle">
+          Equipos senior que construyen sistemas robustos, modelos de ML listos para producción y
+          automatizaciones que ahorran horas desde el día uno.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary" data-i18n="cta.talk">Hablemos</a>
+          <a href="#services" class="btn btn-ghost" data-i18n="cta.services">Ver servicios</a>
+        </div>
+        <div class="hero-badges">
+          <span data-i18n="badges.experience">+10 años en Transporte, Turismo, Deporte, Finanzas y Medicina</span>
+        </div>
+      </div>
+      <div class="grid-overlay" aria-hidden="true"></div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="services.title">Servicios</h2>
+        <div class="cards">
+          <article class="card">
+            <h3 data-i18n="services.backend.title">Backend a medida</h3>
+            <p data-i18n="services.backend.desc">APIs escalables, microservicios, arquitectura de eventos, mensajería, observabilidad y DevOps.</p>
+            <ul class="list">
+              <li data-i18n="services.backend.point1">Diseño y construcción de APIs y microservicios</li>
+              <li data-i18n="services.backend.point2">Bases de datos SQL/NoSQL, colas y streaming</li>
+              <li data-i18n="services.backend.point3">Performance, seguridad y SRE</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 data-i18n="services.ml.title">IA y Machine Learning</h3>
+            <p data-i18n="services.ml.desc">Modelos de predicción, NLP, LLMs, MLOps y evaluaciones. Fine-tuning e inferencia eficiente.</p>
+            <ul class="list">
+              <li data-i18n="services.ml.point1">LLMs, RAG, evaluación y guardrails</li>
+              <li data-i18n="services.ml.point2">Entrenamiento, despliegue e integración</li>
+              <li data-i18n="services.ml.point3">Computer Vision, NLP, tabular y series temporales</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 data-i18n="services.automation.title">Automatizaciones</h3>
+            <p data-i18n="services.automation.desc">Workflows sin fricción con Zapier/Make, bots, RPA y scripts a medida.</p>
+            <ul class="list">
+              <li data-i18n="services.automation.point1">Integraciones SaaS y ETL de datos</li>
+              <li data-i18n="services.automation.point2">Orquestación y monitoreo</li>
+              <li data-i18n="services.automation.point3">Bots y asistentes internos</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="industries.title">Experiencia por sectores</h2>
+        <div class="pill-list">
+          <span class="pill" data-i18n="industries.transport">Transporte</span>
+          <span class="pill" data-i18n="industries.tourism">Turismo</span>
+          <span class="pill" data-i18n="industries.sports">Deporte</span>
+          <span class="pill" data-i18n="industries.finance">Finanzas</span>
+          <span class="pill" data-i18n="industries.health">Medicina</span>
+        </div>
+        <p class="muted" data-i18n="industries.note">Hemos trabajado con startups y corporaciones, integrando sistemas legados y cloud.</p>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="process.title">Proceso</h2>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-content">
+              <h4 data-i18n="process.step1.title">Descubrimiento</h4>
+              <p data-i18n="process.step1.desc">Entendemos tu contexto, restricciones y métricas clave.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-content">
+              <h4 data-i18n="process.step2.title">Arquitectura</h4>
+              <p data-i18n="process.step2.desc">Diseño técnico claro, riesgos conocidos y roadmap incremental.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-content">
+              <h4 data-i18n="process.step3.title">Ejecución</h4>
+              <p data-i18n="process.step3.desc">Sprints cortos, entregables medibles y comunicación transparente.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-content">
+              <h4 data-i18n="process.step4.title">Entrega y soporte</h4>
+              <p data-i18n="process.step4.desc">Despliegue, documentación y transferencia de conocimiento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div class="contact-copy">
+          <h2 class="section-title" data-i18n="contact.title">Cuéntanos sobre tu proyecto</h2>
+          <p class="muted" data-i18n="contact.subtitle">Respondemos en 24-48 horas. También podemos firmar NDA.</p>
+        </div>
+        <form id="contactForm" class="form" novalidate>
+          <div class="form-row">
+            <label for="name" data-i18n="form.name">Nombre</label>
+            <input id="name" name="name" type="text" required placeholder="John Doe" />
+          </div>
+          <div class="form-row">
+            <label for="email" data-i18n="form.email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="john@company.com" />
+          </div>
+          <div class="form-row">
+            <label for="company" data-i18n="form.company">Empresa (opcional)</label>
+            <input id="company" name="company" type="text" placeholder="Acme Inc." />
+          </div>
+          <div class="form-row">
+            <label for="message" data-i18n="form.message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos objetivos, plazos y contexto"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" data-i18n="form.submit">Enviar</button>
+            <span id="formStatus" class="form-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> <span class="brand-text">NeuroBackend</span></span>
+      <a href="#" class="muted" data-i18n="footer.legal">Privacidad</a>
+    </div>
+  </footer>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
